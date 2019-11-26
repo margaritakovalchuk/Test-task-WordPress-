@@ -50,6 +50,7 @@ header .button-main {
   //background-image: url("img/rectangle.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: $contrast-color;
 }
 
 .section__title {
@@ -64,11 +65,19 @@ header .button-main {
   font-size: 17px;
 }
 
+.activity {
+  background-color: #6f6f6e;
+  //background-image: url("img/rectangle.svg");
+  //background-repeat: no-repeat;
+  //background-size: cover;
+}
+
 .section__heading {
   font-family: "OpenSans-ExtraBold", sans-serif;
   font-size: 30px;
   //letter-spacing: -25;
   position: relative;
+
   &::before {
     content: "";
     width: 74px;
@@ -78,4 +87,3 @@ header .button-main {
     //left: 15px;
   }
 }
-
