@@ -1,5 +1,11 @@
 header
-    p.header__logo Agency
-    +navBar(headerMenu)
-    +svg('search')
-    +svg('facebook')
+    .container-fluid
+        .row.align-items-center
+            .col-md-2.offset-md-1
+                p.header__logo Agency
+            .col-md-8.offset-md-1
+                .navigation-wrapper
+                    +navBar(headerMenu)
+                    //ul.socials-wrapper
+                    //    li: +svg('search')
+                    //    li: +svg('facebook')
