@@ -19,3 +19,9 @@ mixin svg(name)
 mixin socialIconList(data)
     each item in data
         +iconSvg(item.name, "../../img/sprite", item.url, item.width, item.height)
+
+mixin picture(title, srcset, src)
+    picture
+        source.img-fluid(type="image/webp" srcset!= `${srcset}`)
+        source.img-fluid(type="image/jpeg" srcset!= `${src}`)
+        img.img-fluid(src!= `${src}` alt!= `${title}`)

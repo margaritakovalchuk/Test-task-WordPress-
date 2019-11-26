@@ -11,10 +11,71 @@ header {
 .main-navigation span {
   font-family: "Lato-Bold", sans-serif;
   font-size: 15px;
-  letter-spacing: 25;
+  //letter-spacing: 25;
 }
 
 header svg {
   fill: $contrast-color;
   width: 25px;
 }
+
+.button-main {
+  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.47);
+  border-radius: 10px;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 21px;
+  //letter-spacing: 25;
+  color: $contrast-color;
+  background-color: $accent-color;
+}
+
+header .button-main {
+  background-color: $contrast-color;
+  color: #242424;
+}
+
+.main-screen {
+  height: 100vh;
+  //background-image: url("img/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: $accent-color;
+  //width: 100%;
+  //min-height: 770px;
+  //height: 100vh;
+}
+
+.about-us {
+  //background-image: url("img/rectangle.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section__title {
+  font-family: "PeaceSans", sans-serif;
+  font-size: 62px;
+  color: #494949;
+}
+
+.section__description {
+  font-family: "OpenSans-Regular", sans-serif;
+  //line-height: 30px;
+  font-size: 17px;
+}
+
+.section__heading {
+  font-family: "OpenSans-ExtraBold", sans-serif;
+  font-size: 30px;
+  //letter-spacing: -25;
+  position: relative;
+  &::before {
+    content: "";
+    width: 74px;
+    height: 74px;
+    background-color: $accent-color;
+    position: absolute;
+    //left: 15px;
+  }
+}
+

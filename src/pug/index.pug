@@ -1,5 +1,58 @@
 extends layouts/_base
 
 block content
+    section.main-screen
         include partials/_header
+        .slogan
+            p Think outside of the box
+        button(type="button").button-main Read more
+        +picture('Guy with skate', '#', 'img/model.png')
+    main
+        section.about-us
+            .container
+                .row
+                    .col-md-6
+                        p.section__title Who we are
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+                        button(type="button").button-main Read more
+                    .col-md-6
+                        +picture('Macbook Pro', '#', 'img/macbook.png')
+
+        section.activity
+            .container
+                p.section__title What we do
+                .row
+                    .col-md-4
+                        p.section__heading Creative Work
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+                    .col-md-4
+                        p.section__heading We do Best
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+                    .col-md-4
+                        p.section__heading Best Company
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+                    .col-md-4
+                        p.section__heading Nice Idea
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+                    .col-md-4
+                        p.section__heading Professional
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+                    .col-md-4
+                        p.section__heading Great Services
+                        p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                            | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            | architecto beatae vitae dicta sunt explicabo.
+
 
