@@ -1,4 +1,4 @@
-# Boilerplate
+# Word Press test task
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and 
 testing purposes.
@@ -12,12 +12,12 @@ Make sure you have:
 
 Clone git repo.
 ```bash
-$ git clone https://github.com/margaritakovalchuk/Boilerplate.git
+$ git clone https://github.com/margaritakovalchuk/Test-task-WordPress-
 ```
 
 Go to app root dir.
 ```bash
-$ cd Boilerplate
+$ cd Test-task-WordPress-
 ```
 
 Install dependencies.

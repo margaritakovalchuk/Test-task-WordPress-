@@ -1,0 +1,20 @@
+header {
+  color: $contrast-color;
+}
+
+.header__logo {
+  font-family: "Lato-Black", sans-serif;
+  font-size: 43px;
+  letter-spacing: -25;
+}
+
+.main-navigation span {
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 15px;
+  letter-spacing: 25;
+}
+
+header svg {
+  fill: $contrast-color;
+  width: 25px;
+}

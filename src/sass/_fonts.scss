@@ -1,0 +1,10 @@
+@include font-face('Lato-Black', '#{$font-path}/Lato-Bold', bold);
+@include font-face('Lato-Bold', '#{$font-path}/Lato-Bold', bold);
+@include font-face('LemonMilkbold', '#{$font-path}/LemonMilkbold', bold);
+@include font-face('OpenSans-Bold', '#{$font-path}/OpenSans-Bold', bold);
+@include font-face('OpenSans-ExtraBold', '#{$font-path}/OpenSans-ExtraBold', bold);
+@include font-face('OpenSans-Italic', '#{$font-path}/OpenSans-Italic', italic);
+@include font-face('LemonMilkbold', '#{$font-path}/LemonMilkbold', bold);
+@include font-face('OpenSans-Regular', '#{$font-path}/OpenSans-Regular');
+@include font-face('PeaceSans', '#{$font-path}/PeaceSans');
+@include font-face('PumpDemiBoldLet', '#{$font-path}/PumpDemiBoldLet');

@@ -1,0 +1,21 @@
+mixin navBar(data)
+    nav.main-navigation
+        ul
+            each item in data
+                if(item.active)
+                    li: span.active!= item.title
+                else
+                    li: a(href=item.url): span!= item.title
+
+mixin footerList(data)
+    ul
+        each item in data
+            li: a(href=item.url)!= item.title
+
+mixin svg(name)
+    svg(class!= `${name}`)
+        use(xlink:href="img/symbol/svg/sprite.svg#" + name)
+
+mixin socialIconList(data)
+    each item in data
+        +iconSvg(item.name, "../../img/sprite", item.url, item.width, item.height)

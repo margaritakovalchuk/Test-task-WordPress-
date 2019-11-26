@@ -111,7 +111,7 @@ const sync = () => {
 const images = () => {
     return gulp
         .src(`${path.img.src}/**/*.{png,jpg,gif,jpeg,webp}`)
-        .pipe(imgmin())
+        // .pipe(imgmin())
         .pipe(gulp.dest(path.img.dist));
 };
 
