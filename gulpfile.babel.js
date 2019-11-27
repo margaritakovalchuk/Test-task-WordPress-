@@ -13,6 +13,8 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import svgSprite from 'gulp-svg-sprite';
+// import slick from 'slick-carousel';
+// import jquery from 'jquery';
 
 const path = {
     baseDir: './dist',
@@ -96,6 +98,11 @@ const js = () => {
         .pipe(browserSync.stream());
 };
 
+// const jQuery = () => {
+//     return gulp
+//         .pipe(jquery(window));
+// };
+
 const sync = () => {
     browserSync.init({
         server: {
@@ -141,6 +148,14 @@ const spriteSvg = () => {
         .pipe(gulp.dest(path.img.dist));
 };
 
+// const slickCarousel = () => {
+//     return gulp.pipe(slick({
+//         dots: false,
+//         arrows: true,
+//     }));
+// };
+
+
 const clean = () => {
     return del([
         path.css.dist,
@@ -148,7 +163,7 @@ const clean = () => {
         path.js.dist,
         `!${path.img.dist}`,
         `!${path.fonts.dist}`,
-    ], { dryRun: true });
+    ], {dryRun: true});
 };
 
 const fonts = () => {

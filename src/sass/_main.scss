@@ -89,15 +89,7 @@ header svg {
 }
 
 .button-main {
-  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.47);
-  border-radius: 20px;
-  font-family: "Lato-Bold", sans-serif;
-  font-size: 21px;
-  //letter-spacing: 25;
-  color: $contrast-color;
-  background-color: $accent-color;
-  padding: 5px 23px;
-  display: inline-flex;
+  @include button();
 }
 
 .main-screen .button-main {
@@ -123,6 +115,7 @@ header svg {
   z-index: 1;
   right: auto;
   left: -75%;
+  opacity: 0.5;
 }
 
 .model {
@@ -133,10 +126,9 @@ header svg {
   background-color: $contrast-color;
   padding: 100px 0 50px;
 
-  &::before {
-    content: '';
-
-  }
+  //&::before {
+  //  content: '';
+  //}
 }
 
 .section__title {
@@ -191,60 +183,183 @@ header svg {
 }
 
 
+.how-we-work {
+  padding: 110px 0;
+  overflow: hidden;
+
+  .section__title {
+    margin-bottom: 35px;
+  }
+
+  .section__description {
+    margin-bottom: 54px;
+  }
+}
+
+.text-wrapper {
+  width: 38%;
+}
+
+.img-block__wrapper {
+  width: 50%;
+}
 
 .img-block__scew {
-  transform: skewX(-20deg);
+  transform: skewX(-25deg);
   overflow: hidden;
   margin: 5px;
-  width: 455px;
-  height: 300px;
-  background-image: url('https://i.stack.imgur.com/Jtx0O.jpg?s=32&g=1');
+  //width: 250px;
+  //height: 220px;
+  min-width: 250px;
+  min-height: 220px;
   background-blend-mode: multiply;
   background-color: #424240;
-  color: white;
-  // position: relative;
-  // left: 50%;
-  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.22);
-  padding: 20px 20px;
+  color: #fff;
+  box-shadow: -4px 11px 40px 0 rgba(0, 1, 1, .22);
+  //padding: 20px 20px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
 }
 
-.img-block__scew:hover .img-block__description {
-  transform: translatey(0px);
-  opacity: 1;
-  visibility: visible;
+//.img-block__wrapper {
+//  :nth-of-type(1) {
+//    background-image: url('../img/how-we-work-1.jpg');
+//  }
+
+//
+//  :nth-of-type(2) {
+//    background-image: url('../img/how-we-work-2.jpg');
+//  }
+//
+//  :nth-of-type(3) {
+//    background-image: url('../img/how-we-work-3.png');
+//  }
+//}
+
+.img-block__scew:hover {
+  .img-block__description {
+    transform: translatey(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .img-block__title {
+    transform: translatey(0px);
+  }
 }
 
-.img-block__scew-wrapper{
-  transform: skewX(20deg);
+.img-block__scew-text {
+  transform: skewX(25deg);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10% 0 5%;
 }
 
 .img-block__order {
   font-size: 58px;
-  /*   letter-spacing: 25; */
-  font-family: 'Lato', sans-serif;
+  letter-spacing: 3px;
+  font-family: 'Lato-Bold', sans-serif;
   font-weight: 500;
-  text-align: right;
   margin-bottom: 20px;
   line-height: 1;
+  align-self: flex-end;
+  position: relative;
+  left: 15%;
 }
 
 .img-block__title {
   font-size: 40px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato-Bold', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
+  transform: translateY(62px);
+  transition: all 0.2s ease-in-out;
 }
 
 .img-block__description {
   position: relative;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 30px;
-  font-size: 18px;
-  width: 90%;
+  font-family: 'OpenSans-Regular', sans-serif;
+  line-height: 21px;
+  font-size: 16px;
   transform: translatey(100px);
-  // opacity: 0;
-  // visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
 }
 
+.team {
+  background-color: #f5f5f5;
+  padding: 40px 0;
 
+  .section__title {
+    margin-bottom: 75px;
+
+  }
+}
+
+.slide-inner {
+  position: relative;
+}
+
+.img-wrapper {
+  border: 18px solid rgb(255, 255, 255);
+  background-color: rgb(231, 231, 230);
+  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.22);
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  transform: rotate(45deg);
+  /*   position: absolute; */
+  /*   left: 50px; */
+  /*   top: 50px; */
+}
+
+//.img-block {
+//  /*   transform: rotate(-45deg); */
+//}
+
+.img-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+.team-member {
+  background-color: #252525;
+  display: inline-flex;
+  padding: 5px 35px;
+  transform: skew(45deg);
+  position: absolute;
+  bottom: -70px;
+  left: 54px;
+  font-size: 15px;
+}
+
+.team-member span {
+  transform: skew(-45deg);
+  color: #ffffff;
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.member-position {
+  background-color: #bc2e3a;
+  display: inline-flex;
+  padding: 4px 12px;
+  transform: skew(45deg);
+  position: absolute;
+  bottom: -91px;
+  left: 100px;
+}
+
+.member-position span {
+  transform: skew(-45deg);
+  color: #ffffff;
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-style: italic;
+  font-size: 13px;
+}

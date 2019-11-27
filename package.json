@@ -28,7 +28,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.4.1",
+    "slick-carousel": "^1.8.1"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",

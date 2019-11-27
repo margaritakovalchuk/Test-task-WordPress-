@@ -58,25 +58,60 @@ block content
                             | doloremque laudantium
 
         section.how-we-work
-            .text-wrapper.reverse-container
-                .col-md-6
-                    p.section__title How we works
+            .container
+                p.section__title How we works
+            .d-flex.justify-content-between
+                .text-wrapper.reverse-container.flex-wrap.pr-md-0
                     p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                         | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                         | architecto beatae vitae dicta sunt explicabo.
                     button(type="button").button-main Read more
-            .img-block__wrapper.reverse-container
-                .img-block__scew
-                    .img-block__scew-wrapper
-                        p.img-block__order 1.
-                        p.img-block__title IDEA
-                        p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-
-
-
+                .img-block__wrapper.reverse-container.d-flex.px-md-0.offset-md-1.align-items-center
+                    .img-block__scew
+                        .img-block__scew-text
+                            span.img-block__order 1.
+                            p.img-block__title IDEA
+                            p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                    .img-block__scew
+                        .img-block__scew-text
+                            span.img-block__order 1.
+                            p.img-block__title IDEA
+                            p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                    .img-block__scew
+                        .img-block__scew-text
+                            span.img-block__order 1.
+                            p.img-block__title IDEA
+                            p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
 
         section.team
-            p.section__title Our creative team
-            .slider
+            .container
+                .d-flex.flex-column.align-items-center
+                    p.section__title Our creative team
+                    .slider-team.d-flex.justify-content-between
+                        .slide-inner
+                            .img-wrapper
+                                .img-block
+                                    img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
+                            p.team-member
+                                span Jimmy Doe
+                            p.member-position
+                                span Designer
+                        .slide-inner
+                            .img-wrapper
+                                .img-block
+                                    img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
+                            p.team-member
+                                span Jimmy Doe
+                            p.member-position
+                                span Designer
+                        .slide-inner
+                            .img-wrapper
+                                .img-block
+                                    img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
+                            p.team-member
+                                span Jimmy Doe
+                            p.member-position
+                                span Designer
+
 
 

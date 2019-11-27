@@ -1,8 +1,7 @@
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
   @font-face {
     font-family: $font-family;
-    src: url('#{$file-path}.woff2') format('woff2'),
-    url('#{$file-path}.woff') format('woff');
+    src: url('#{$file-path}.woff') format('woff');
     font-weight: $weight;
     font-style: $style;
   }
@@ -19,11 +18,24 @@
 }
 
 @mixin button {
+  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.47);
+  border-radius: 20px;
+  font-family: "Lato-Bold", sans-serif;
+  font-size: 21px;
+  //letter-spacing: 25;
+  color: $contrast-color;
+  background-color: $accent-color;
+  padding: 5px 23px;
+  display: inline-flex;
+  border: 2px solid transparent;
 
+  &:hover {
+    color: $accent-color;
+    background-color: $contrast-color;
+    border: 2px solid $accent-color;
+
+  }
 }
 
-@mixin button-hover {
-
-}
 
 
