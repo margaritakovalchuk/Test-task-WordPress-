@@ -124,35 +124,31 @@ const images = () => {
 
 const spriteSvg = () => {
     const config = {
-        // mode: {
-        //     symbol: {
-        //         dest: path.img.dist,
-        //         inline: true
-        //     },
-        // },
-        // shape: {
-        //     transform: ['svgo'],
-        // },
-        // svg: {
-        //     namespaceClassnames: true,
-        // },
+        mode: {
+            symbol: {
+                // dest: path.img.dist,
+                inline: true
+            },
+        },
+        shape: {
+            transform: ['svgo'],
+        },
+        svg: {
+            namespaceClassnames: true,
+        },
     };
 
     return gulp
         .src(`${path.img.src}/**/*.svg`)
-        .pipe(svgSprite())
-        // .pipe(svgSprite(config))
-        // .pipe(rename({
-        //     basename: 'sprite'
-        // }))
+        .pipe(svgSprite(config))
+        .pipe(rename({
+            basename: 'sprite'
+        }))
         .pipe(gulp.dest(path.img.dist));
 };
 
 // const slickCarousel = () => {
-//     return gulp.pipe(slick({
-//         dots: false,
-//         arrows: true,
-//     }));
+//     return gulp.pipe();
 // };
 
 
@@ -171,6 +167,6 @@ const fonts = () => {
         .pipe(gulp.dest(path.fonts.dist));
 };
 
-export default gulp.series(clean, gulp.parallel(sass, js, html), sync);
+export default gulp.series(clean, spriteSvg, gulp.parallel(sass, js, html), sync);
 // export default gulp.series(clean, images, fonts, gulp.parallel(sass, js, html), sync);
 // export default gulp.series(clean, images, spriteSvg, fonts, gulp.parallel(sass, js, html), sync);

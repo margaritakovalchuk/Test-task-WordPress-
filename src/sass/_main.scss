@@ -65,7 +65,7 @@ header {
   text-transform: uppercase;
   text-align: center;
   text-shadow: 0 0 19px #231f20;
-  color: #fff;
+  color: $contrast-color;
   mix-blend-mode: soft-light;
   margin-bottom: 30px;
 
@@ -84,8 +84,8 @@ header svg {
   fill: $contrast-color;
   width: 25px;
   height: 25px;
-  color: black;
-  background-color: black;
+  color: $black-color;
+  background-color: $black-color;
 }
 
 .button-main {
@@ -214,7 +214,7 @@ header svg {
   min-height: 220px;
   background-blend-mode: multiply;
   background-color: #424240;
-  color: #fff;
+  color: $contrast-color;
   box-shadow: -4px 11px 40px 0 rgba(0, 1, 1, .22);
   //padding: 20px 20px;
   cursor: pointer;
@@ -223,21 +223,6 @@ header svg {
     margin-right: 24px;
   }
 }
-
-//.img-block__wrapper {
-//  :nth-of-type(1) {
-//    background-image: url('../img/how-we-work-1.jpg');
-//  }
-
-//
-//  :nth-of-type(2) {
-//    background-image: url('../img/how-we-work-2.jpg');
-//  }
-//
-//  :nth-of-type(3) {
-//    background-image: url('../img/how-we-work-3.png');
-//  }
-//}
 
 .img-block__scew:hover {
   .img-block__description {
@@ -308,26 +293,24 @@ header svg {
   position: relative;
 }
 
-.img-wrapper {
-  border: 18px solid rgb(255, 255, 255);
-  background-color: rgb(231, 231, 230);
-  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.22);
+.img-wrapper, .img-block {
+  transform-origin: 50% 50%;
+  overflow: hidden;
   width: 250px;
   height: 250px;
-  overflow: hidden;
-  transform: rotate(45deg);
-  /*   position: absolute; */
-  /*   left: 50px; */
-  /*   top: 50px; */
 }
 
-//.img-block {
-//  /*   transform: rotate(-45deg); */
-//}
+.img-wrapper {
+  transform: rotate(45deg);
+  border: 18px solid $contrast-color;
+  background-color: rgb(231, 231, 230);
+  box-shadow: -4px 11px 40px 0px rgba(0, 1, 1, 0.22);
+}
 
-.img-wrapper img {
-  max-width: 100%;
-  height: auto;
+.img-wrapper .img-block {
+  width: 355px;
+  height: 355px;
+  transform: rotate(-45deg) translateY(-82px) translateX(5px);
 }
 
 .team-member {
@@ -343,7 +326,7 @@ header svg {
 
 .team-member span {
   transform: skew(-45deg);
-  color: #ffffff;
+  color: $contrast-color;
   font-family: 'OpenSans-Regular', sans-serif;
   font-weight: bold;
   font-size: 16px;
@@ -361,16 +344,15 @@ header svg {
 
 .member-position span {
   transform: skew(-45deg);
-  color: #ffffff;
+  color: $contrast-color;
   font-family: 'OpenSans-Regular', sans-serif;
   font-style: italic;
   font-size: 13px;
 }
 
-
 .comment {
-  color: #6a6a6a;
-  padding: 40px 0;
+  color: $main-color;
+  padding: 40px 0 100px 0;
 
   .section__title {
     margin-bottom: 80px;
@@ -402,7 +384,6 @@ header svg {
 }
 
 .comment-pagination {
-
   .slide-inner {
     cursor: pointer;
 
@@ -415,13 +396,20 @@ header svg {
     border: 0;
     width: 50px;
     height: 50px;
+    box-shadow: 0 0 17px 0 rgba(0, 1, 1, .22);
+  }
+
+  .img-block {
+    transform: rotate(-45deg) translateY(-15px) translateX(0px);
+    width: 70px;
+    height: 70px;
   }
 }
 
 
 footer {
   padding: 40px 0;
-  color: #ffffff;
+  color: $contrast-color;
   background-color: #171717;
   background-image: url("../img/footer.jpg");
   background-repeat: no-repeat;
@@ -440,10 +428,28 @@ footer {
   }
 }
 
+.contacts {
+  margin-bottom: 35px;
+}
+
 .email,
 .phone,
 .address {
-  &:first-child {
+  position: relative;
+  &::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/symbol/svg/sprite.svg/symbol");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: calc(100% + 21px);
+    background-color: red;
+  }
+
+  li:first-child,
+  span {
     font-family: "OpenSans-Bold", sans-serif;
     font-size: 22px;
     line-height: 1;
@@ -453,22 +459,40 @@ footer {
   li > a, address {
     font-family: "OpenSans-Regular", sans-serif;
     font-size: 17px;
-    color: #ffffff;
+    color: $contrast-color;
     letter-spacing: 2px;
 
     &:hover {
-      color: #bc2e3a;
+      color: $accent-color;
     }
   }
 
   address {
     line-height: 1.4;
   }
+
+  span {
+    display: inline-block;
+  }
 }
 
 .socials {
-  border-bottom: 1px solid #ffffff;
-  padding-bottom: 10px;
+  border-bottom: 1px solid $contrast-color;
+  padding-bottom: 25px;
+  width: 40%;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  svg {
+    fill: $contrast-color;
+    width: 34px;
+    height: 34px;
+  }
+
+  li:hover svg {
+    fill: $accent-color;
+  }
 }
 
 .copy {

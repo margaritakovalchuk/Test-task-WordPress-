@@ -7,19 +7,26 @@ mixin navBar(data)
                 else
                     li: a(href=item.url): span!= item.title
 
-//mixin footerList(data)
-//    ul
-//        each item in data
-//            li: a(href=item.url)!= item.title
-
 mixin svg(name)
     svg(class!= `${name}`)
         use(xlink:href="img/symbol/svg/sprite.svg#" + name)
 
-mixin socialIconList(data)
-    each item in data
-        +iconSvg(item.name, "../../img/sprite", item.url, item.width, item.height)
-
+mixin socials
+    ul.socials.d-flex
+        li: a(href="#" target="_blank")
+            +svg('facebook-logo')
+        li: a(href="#" target="_blank")
+            +svg('google-plus-logo')
+        li: a(href="#" target="_blank")
+            +svg('vk-logo')
+        li: a(href="#" target="_blank")
+            +svg('youtube-logo')
+        li: a(href="#" target="_blank")
+            +svg('linkedin-logo')
+        li: a(href="#" target="_blank")
+            +svg('digg-logo')
+        li: a(href="#" target="_blank")
+            +svg('linkedin-logo')
 
 mixin picture(className, title, srcset, src, isFluid)
     - const fluid = !isFluid ? 'img-fluid' : null;
@@ -33,7 +40,7 @@ mixin slideTeam (data)
         .slide-inner
             .img-wrapper
                 .img-block
-                    img(src!= `${item.src}` alt=`${item.alt}`)
+                    img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
             p.team-member
                 span Jimmy Doe
             p.member-position
@@ -44,4 +51,4 @@ mixin slideComment (data)
         .slide-inner
             .img-wrapper
                 .img-block
-                    img(src!= `${item.src}` alt=`${item.alt}`)
+                    img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
