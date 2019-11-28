@@ -14,7 +14,7 @@ import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import svgSprite from 'gulp-svg-sprite';
 // import slick from 'slick-carousel';
-// import jquery from 'jquery';
+import jquery from 'jquery';
 
 const path = {
     baseDir: './dist',
@@ -98,10 +98,10 @@ const js = () => {
         .pipe(browserSync.stream());
 };
 
-// const jQuery = () => {
-//     return gulp
-//         .pipe(jquery(window));
-// };
+const jQuery = () => {
+    return gulp
+        .pipe(jquery(window));
+};
 
 const sync = () => {
     browserSync.init({

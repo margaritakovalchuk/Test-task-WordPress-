@@ -27,3 +27,21 @@ mixin picture(className, title, srcset, src, isFluid)
         source(class!= fluid type="image/webp" srcset!= srcset)
         source(class!= fluid type="image/jpeg" srcset!= src)
         img(class!= fluid src!= src alt!= title)
+
+mixin slideTeam (data)
+    each item in data
+        .slide-inner
+            .img-wrapper
+                .img-block
+                    img(src!= `${item.src}` alt=`${item.alt}`)
+            p.team-member
+                span Jimmy Doe
+            p.member-position
+                span Designer
+
+mixin slideComment (data)
+    each item in data
+        .slide-inner
+            .img-wrapper
+                .img-block
+                    img(src!= `${item.src}` alt=`${item.alt}`)

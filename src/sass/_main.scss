@@ -297,8 +297,11 @@ header svg {
 
   .section__title {
     margin-bottom: 75px;
-
   }
+}
+
+.slider-team {
+  margin-bottom: 110px;
 }
 
 .slide-inner {
@@ -333,7 +336,7 @@ header svg {
   padding: 5px 35px;
   transform: skew(45deg);
   position: absolute;
-  bottom: -70px;
+  bottom: -35px;
   left: 54px;
   font-size: 15px;
 }
@@ -352,8 +355,8 @@ header svg {
   padding: 4px 12px;
   transform: skew(45deg);
   position: absolute;
-  bottom: -91px;
-  left: 100px;
+  bottom: -60px;
+  right: 70px;
 }
 
 .member-position span {
@@ -362,4 +365,113 @@ header svg {
   font-family: 'OpenSans-Regular', sans-serif;
   font-style: italic;
   font-size: 13px;
+}
+
+
+.comment {
+  color: #6a6a6a;
+  padding: 40px 0;
+
+  .section__title {
+    margin-bottom: 80px;
+  }
+}
+
+.comment-text {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  position: relative;
+
+  &::before {
+    content: '“';
+    position: absolute;
+    font-family: 'PumpDemiBoldLet', sans-serif;
+    font-size: 200px;
+    top: auto;
+    left: -108px;
+    line-height: 0.5;
+    font-style: initial;
+  }
+}
+
+.comment-author {
+  font-size: 18px;
+  font-family: "OpenSans", sans-serif;
+  font-weight: bold;
+}
+
+.comment-pagination {
+
+  .slide-inner {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  .img-wrapper {
+    border: 0;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+footer {
+  padding: 40px 0;
+  color: #ffffff;
+  background-color: #171717;
+  background-image: url("../img/footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  &::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    //background-image: url("");
+  }
+
+  .section__title {
+    margin-bottom: 40px;
+  }
+}
+
+.email,
+.phone,
+.address {
+  &:first-child {
+    font-family: "OpenSans-Bold", sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  li > a, address {
+    font-family: "OpenSans-Regular", sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    letter-spacing: 2px;
+
+    &:hover {
+      color: #bc2e3a;
+    }
+  }
+
+  address {
+    line-height: 1.4;
+  }
+}
+
+.socials {
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
+}
+
+.copy {
+  display: block;
+  text-align: center;
 }

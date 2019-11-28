@@ -88,30 +88,22 @@ block content
                 .d-flex.flex-column.align-items-center
                     p.section__title Our creative team
                     .slider-team.d-flex.justify-content-between
-                        .slide-inner
-                            .img-wrapper
-                                .img-block
-                                    img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
-                            p.team-member
-                                span Jimmy Doe
-                            p.member-position
-                                span Designer
-                        .slide-inner
-                            .img-wrapper
-                                .img-block
-                                    img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
-                            p.team-member
-                                span Jimmy Doe
-                            p.member-position
-                                span Designer
-                        .slide-inner
-                            .img-wrapper
-                                .img-block
-                                    img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
-                            p.team-member
-                                span Jimmy Doe
-                            p.member-position
-                                span Designer
+                        +slideTeam(images)
 
-
+        section.comment
+            .container
+                p.section__title What client says
+                .row
+                    .col-md-4
+                        .slider-comment
+                            .slide-inner
+                                .img-wrapper
+                                    .img-block
+                                        img(src='https://margaritakovalchuk.github.io/studio/img/feature-img.png' alt='')
+                    .col-md-7.ml-md-4.d-flex.flex-column.justify-content-between
+                        p.comment-text cSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            | laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium       doloremque  laudantium.
+                        p.comment-author Jinny Snow, Company CEO
+                        .comment-pagination.d-flex
+                            +slideComment(images)
 
