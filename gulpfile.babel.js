@@ -13,8 +13,6 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import svgSprite from 'gulp-svg-sprite';
-// import slick from 'slick-carousel';
-import jquery from 'jquery';
 
 const path = {
     baseDir: './dist',
@@ -42,6 +40,9 @@ const path = {
         global: {
             bootstrap4: {
                 scss: './node_modules/bootstrap/scss/bootstrap.scss',
+            },
+            jquery: {
+                js: './node_modules/jquery/dist/jquery.min.js',
             }
         },
         local: {
@@ -52,7 +53,11 @@ const path = {
 
 const sass = () => {
     return gulp
-        .src([`${path.libs.global.bootstrap4.scss}`, `${path.libs.local.baseDir}/**/*.scss`, `${path.css.src}/**/*.scss`])
+        .src([
+            `${path.libs.global.bootstrap4.scss}`,
+            `${path.libs.local.baseDir}/**/*.{scss,css}`,
+            `${path.css.src}/**/*.scss`
+        ])
         .pipe(sourcemaps.init())
         .pipe(gulpSass().on('error', gulpSass.logError))
         .pipe(autoPrefix())
@@ -81,7 +86,12 @@ const html = () => {
 };
 
 const js = () => {
-    return gulp.src([`${path.libs.local.baseDir}/**/*.js`, `${path.js.src}/**/*.js`])
+    return gulp.src([
+        `${path.libs.global.jquery.js}`,
+        `${path.libs.local.baseDir}/**/*.js`,
+        `${path.js.src}/plugins/**/*.js`,
+        `${path.js.src}/main.js`
+    ])
         .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['@babel/env']
@@ -96,11 +106,6 @@ const js = () => {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.js.dist))
         .pipe(browserSync.stream());
-};
-
-const jQuery = () => {
-    return gulp
-        .pipe(jquery(window));
 };
 
 const sync = () => {
@@ -136,6 +141,13 @@ const spriteSvg = () => {
         svg: {
             namespaceClassnames: true,
         },
+        view: { // Activate the «view» mode
+            bust: false,
+            render: {
+                scss: true // Activate Sass output (with default options)
+            }
+
+        },
     };
 
     return gulp
@@ -147,17 +159,12 @@ const spriteSvg = () => {
         .pipe(gulp.dest(path.img.dist));
 };
 
-// const slickCarousel = () => {
-//     return gulp.pipe();
-// };
-
-
 const clean = () => {
     return del([
         path.css.dist,
         path.html.dist,
         path.js.dist,
-        `!${path.img.dist}`,
+        path.img.dist,
         `!${path.fonts.dist}`,
     ], {dryRun: true});
 };

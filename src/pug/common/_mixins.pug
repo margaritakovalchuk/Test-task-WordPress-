@@ -35,20 +35,24 @@ mixin picture(className, title, srcset, src, isFluid)
         source(class!= fluid type="image/jpeg" srcset!= src)
         img(class!= fluid src!= src alt!= title)
 
-mixin slideTeam (data)
+mixin slideTeam(data)
     each item in data
-        .slide-inner
-            .img-wrapper
-                .img-block
-                    img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
-            p.team-member
+        +slideComment(item)
+            p.team-member1
                 span Jimmy Doe
-            p.member-position
+            p.member-position1
                 span Designer
 
-mixin slideComment (data)
+mixin slideComment(item)
+    .slide-inner
+        .img-wrapper
+            .img-block
+                img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
+
+mixin skewBlock(data)
     each item in data
-        .slide-inner
-            .img-wrapper
-                .img-block
-                    img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
+        .img-block__scew(style=`background-image: url('${item.src}')`)
+            .img-block__scew-text
+                span.img-block__order 1.
+                p.img-block__title IDEA
+                p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.

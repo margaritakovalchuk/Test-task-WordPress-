@@ -57,8 +57,20 @@ header {
   font-size: 15px;
   letter-spacing: 2px;
   color: $contrast-color;
+  //pos
 }
-
+//.main-navigation li a span {
+// &:before,
+// &:after {
+//    position: absolute;
+//    opacity: 0.5;
+//    height: 100%;
+//    width: 2px;
+//    content: '';
+//    background: #FFF;
+//    transition: all 0.3s;
+//  }
+//}
 .slogan {
   font-family: "LemonMilkbold", sans-serif;
   //color: $contrast-color;
@@ -68,6 +80,7 @@ header {
   color: $contrast-color;
   mix-blend-mode: soft-light;
   margin-bottom: 30px;
+  z-index: 2;
 
   p {
     font-size: 114px;
@@ -89,14 +102,17 @@ header svg {
 }
 
 .button-main {
-  @include button();
+  @include link();
 }
 
 .main-screen .button-main {
   background-color: $contrast-color;
   color: #242424;
-  display: block;
-  margin: 0 auto;
+  z-index: 2;
+}
+
+.img-wrapper_shadow {
+  z-index: 1;
 }
 
 .shade,
@@ -169,7 +185,7 @@ header svg {
       background-color: $accent-color;
       position: absolute;
       border-radius: 50%;
-      left: -90px;
+      right: calc(100% + 20px);
     }
   }
 }
@@ -189,10 +205,6 @@ header svg {
 
   .section__title {
     margin-bottom: 35px;
-  }
-
-  .section__description {
-    margin-bottom: 54px;
   }
 }
 
@@ -436,16 +448,19 @@ footer {
 .phone,
 .address {
   position: relative;
+
   &::before {
     content: '';
     width: 50px;
     height: 50px;
-    background-image: url("../img/symbol/svg/sprite.svg/symbol");
+    background-image: url("../img/symbol/svg/sprite.svg#jmap-view");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center center;
+    //background-size: cover;
     position: absolute;
     right: calc(100% + 21px);
-    background-color: red;
+    background-size: 40px;
+    display: inline-block;
   }
 
   li:first-child,
@@ -461,10 +476,10 @@ footer {
     font-size: 17px;
     color: $contrast-color;
     letter-spacing: 2px;
+  }
 
-    &:hover {
-      color: $accent-color;
-    }
+  li > a:hover {
+    color: $accent-color;
   }
 
   address {
@@ -483,6 +498,7 @@ footer {
   margin: 0 auto;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 
   svg {
     fill: $contrast-color;

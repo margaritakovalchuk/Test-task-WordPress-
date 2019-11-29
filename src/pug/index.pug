@@ -3,15 +3,15 @@ extends layouts/_base
 block content
     section.main-screen
         include partials/_header
-        .reverse-container.d-flex.align-items-center
-            .col-md-6.offset-md-1
+        .reverse-container.d-flex
+            .col-md-6.offset-md-1.d-flex.align-items-center.flex-column.align-self-center
                 .slogan
                     p Think outside
                     br
                     |
                     span of the box
-                button(type="button").button-main Read more
-            .col-md-5.align-self-start
+                a(href="#").button-main Read more
+            .col-md-5
                 .img-wrapper_shadow.position-relative
                     +picture('model','Guy with skate', '','img/model.png',true)
                     +picture('shade','shade', '','img/Shade.png', true)
@@ -24,7 +24,7 @@ block content
                         p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                             | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                             | architecto beatae vitae dicta sunt explicabo.
-                        button(type="button").button-main Read more
+                        a(href="#").button-main Read more
                     .col-md-7
                         +picture('Macbook Pro', '#', 'img/macbook.png')
 
@@ -59,35 +59,21 @@ block content
 
         section.how-we-work
             .container
-                p.section__title How we works
+                p.section__title How we work
             .d-flex.justify-content-between
-                .text-wrapper.reverse-container.flex-wrap.pr-md-0
+                .text-wrapper.reverse-container.pr-md-0.d-flex.flex-column.align-items-start.justify-content-between
                     p.section__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                         | doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                         | architecto beatae vitae dicta sunt explicabo.
-                    button(type="button").button-main Read more
+                    a(href="#").button-main Read more
                 .img-block__wrapper.reverse-container.d-flex.px-md-0.offset-md-1.align-items-center
-                    .img-block__scew
-                        .img-block__scew-text
-                            span.img-block__order 1.
-                            p.img-block__title IDEA
-                            p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-                    .img-block__scew
-                        .img-block__scew-text
-                            span.img-block__order 1.
-                            p.img-block__title IDEA
-                            p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-                    .img-block__scew
-                        .img-block__scew-text
-                            span.img-block__order 1.
-                            p.img-block__title IDEA
-                            p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                    +skewBlock(skewImages)
 
         section.team
             .container
                 .d-flex.flex-column.align-items-center
                     p.section__title Our creative team
-                    .slider-team.d-flex.justify-content-between
+                    .slider.slider-team
                         +slideTeam(images)
 
         section.comment
@@ -105,5 +91,5 @@ block content
                             | laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium       doloremque  laudantium.
                         p.comment-author Jinny Snow, Company CEO
                         .comment-pagination.d-flex
-                            +slideComment(images)
-
+                            each item in images
+                                +slideComment(item)
