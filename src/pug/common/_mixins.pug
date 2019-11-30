@@ -37,10 +37,13 @@ mixin picture(className, title, srcset, src, isFluid)
 
 mixin slideTeam(data)
     each item in data
-        +slideComment(item)
-            p.team-member1
+        .slide-inner
+            .img-wrapper
+                .img-block
+                    img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
+            p.team-member
                 span Jimmy Doe
-            p.member-position1
+            p.member-position
                 span Designer
 
 mixin slideComment(item)
