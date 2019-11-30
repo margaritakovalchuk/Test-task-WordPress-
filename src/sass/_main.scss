@@ -39,17 +39,21 @@ header {
   font-family: "Lato-Black", sans-serif;
   font-size: 43px;
   letter-spacing: -25;
+  line-height: 1;
 }
 
-.socials-wrapper {
+.navigation-wrapper {
   display: flex;
   justify-content: space-between;
-  //flex-direction: row;
 }
 
 .main-navigation ul {
   display: flex;
   justify-content: space-around;
+
+  li:not(:last-child) {
+    margin-right: 20px;
+  }
 }
 
 .main-navigation span {
@@ -93,10 +97,23 @@ header {
     height: 2px;
 
     content: '';
-    background: #FFF;
+    background: $contrast-color;
   }
 }
 
+.socials-wrapper {
+  display: flex;
+
+  li:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  svg {
+    fill: $contrast-color;
+    width: 25px;
+    height: 25px;
+  }
+}
 
 .slogan {
   font-family: "LemonMilkbold", sans-serif;
@@ -118,14 +135,6 @@ header {
     font-size: 74px;
     line-height: 0.4;
   }
-}
-
-header svg {
-  fill: $contrast-color;
-  width: 25px;
-  height: 25px;
-  color: $black-color;
-  background-color: $black-color;
 }
 
 .button-main {
@@ -220,11 +229,9 @@ header svg {
 .section__heading {
   font-family: "OpenSans-ExtraBold", sans-serif;
   font-size: 30px;
-  //letter-spacing: -25;
   position: relative;
   margin-bottom: 20px;
 }
-
 
 .how-we-work {
   padding: 110px 0;
@@ -247,40 +254,52 @@ header svg {
   transform: skewX(-25deg);
   overflow: hidden;
   margin: 5px;
-  //width: 250px;
-  //height: 220px;
-  min-width: 250px;
-  min-height: 220px;
-  background-blend-mode: multiply;
-  background-color: #424240;
-  color: $contrast-color;
-  box-shadow: -4px 11px 40px 0 rgba(0, 1, 1, .22);
-  //padding: 20px 20px;
+  width: 250px;
+  height: 220px;
+  //min-width: 250px;
+  //min-height: 220px;
   cursor: pointer;
+  box-shadow: -4px 11px 40px 0 rgba(0, 1, 1, .22);
 
   &:not(:last-child) {
     margin-right: 24px;
   }
 }
 
+.img-block__img_unskew {
+  transform: skewX(25deg) scale(1.5);
+  background-color: #424240;
+  opacity: .7;
+  //max-width: 250px;
+  //max-height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
 .img-block__scew:hover {
+  .img-block__img_unskew {
+    opacity: 0.8;
+  }
+
+  .img-block__title {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+
   .img-block__description {
     transform: translatey(0px);
     opacity: 1;
     visibility: visible;
   }
-
-  .img-block__title {
-    transform: translatey(0px);
-  }
 }
 
 .img-block__scew-text {
-  transform: skewX(25deg);
+  transform: scale(0.69);
   position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 10% 0 5%;
+  color: $contrast-color;
 }
 
 .img-block__order {

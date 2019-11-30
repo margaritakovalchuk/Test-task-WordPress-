@@ -51,8 +51,9 @@ mixin slideComment(item)
 
 mixin skewBlock(data)
     each item in data
-        .img-block__scew(style=`background-image: url('${item.src}')`)
-            .img-block__scew-text
-                span.img-block__order 1.
-                p.img-block__title IDEA
-                p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+        .img-block__scew
+            .img-block__img_unskew(style=`background-image: url('${item.src}')`)
+                .img-block__scew-text
+                    span.img-block__order 1.
+                    p.img-block__title IDEA
+                    p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.

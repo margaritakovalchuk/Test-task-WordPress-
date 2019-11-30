@@ -73,8 +73,14 @@ block content
             .container
                 .d-flex.flex-column.align-items-center
                     p.section__title Our creative team
-                    .slider.slider-team
-                        +slideTeam(images)
+
+
+        .slick-center-wrap
+            a.pic-prev(href='javascript:;' title='Previous') prev
+            a.pic-next(href='javascript:;' title='Next') next
+            .slick-center.slider-team.slider
+                +slideTeam(images)
+
 
         section.comment
             .container

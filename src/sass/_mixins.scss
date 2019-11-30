@@ -24,7 +24,6 @@
   font-size: 21px;
   //letter-spacing: 25;
   color: $contrast-color;
-  //display: inline-block;
   background-color: $accent-color;
   padding: 5px 23px;
   border: 2px solid transparent;
@@ -42,7 +41,7 @@
   height: 100%;
   width: 2px;
   content: '';
-  background: #FFF;
+  background: $contrast-color;
   transition: all 0.3s;
 }
 
