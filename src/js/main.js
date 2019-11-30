@@ -2,18 +2,18 @@ window.onload = init;
 
 function init() {
     const slider = new Slider('.slick-center', {
+        centerMode: true,
         prevArrow: $('.pic-prev'),
         nextArrow: $('.pic-next'),
-        infinite: false,
+        infinite: true,
         dots: false,
         arrows: true,
         autoplay: false,
         swipe: true,
         touchMove: false,
-        centerMode: true,
         centerPadding: '12%',
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         lazyLoad: 'progressive',
         responsive: [
             {
