@@ -46,11 +46,11 @@ mixin slideTeam(data)
             p.member-position
                 span Designer
 
-mixin slideComment(item)
-    .slide-inner
-        .img-wrapper
-            .img-block
-                img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
+//mixin slideComment(item)
+////    .slide-pagination
+////        .img-wrapper
+////            .img-block
+                //img.img-fluid(src!= `${item.src}` alt=`${item.alt}`)
 
 mixin skewBlock(data)
     each item in data
@@ -60,3 +60,16 @@ mixin skewBlock(data)
                     span.img-block__order 1.
                     p.img-block__title IDEA
                     p.img-block__description Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+
+mixin sliderComment(data)
+    each item in data
+        .slider-comment
+            .row
+                .col-md-4
+                    .slide-inner
+                        .img-wrapper
+                            .img-block
+                                img(src!= `${item.src}` alt=`${item.alt}`)
+                .col-md-8.d-flex.flex-column
+                    p.comment-text!= item.text
+                    p.comment-author!= `${item.name}, ${item.role}`

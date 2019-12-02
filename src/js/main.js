@@ -16,26 +16,36 @@ function init() {
         slidesToScroll: 1,
         lazyLoad: 'progressive',
         variableWidth: true,
-        // responsive: [
-        //     {
-        //         breakpoint: 992,
-        //         settings: {
-        //             slidesToShow: 3,
-        //             slidesToScroll: 1
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 500,
-        //         settings: {
-        //             slidesToShow: 1,
-        //             slidesToScroll: 1,
-        //             centerMode: false
-        //         }
-        //     },
-        // ]
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false
+                }
+            },
+        ]
     });
     sliderTeam.run();
 
-    const sliderComment = new Slider('');
+    const sliderComment = new Slider('.slider-comments',{
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        customPaging: function(slider, item) {
+            return '<div class="slide-pagination"><div class="img-wrapper"><div class="img-block">' +
+                '<img class="img-fluid" src=`${item.src}` alt=`${item.alt}`></div></div></div>'
+        },
+        arrows: false,
+        fade: true,
+    });
     sliderComment.run();
 }
