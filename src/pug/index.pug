@@ -74,13 +74,12 @@ block content
                 .d-flex.flex-column.align-items-center
                     p.section__title Our creative team
                 .slick-center-wrap
-                    a.pic-prev(href='javascript:;' title='Previous') prev
-                    a.pic-next(href='javascript:;' title='Next') next
                     .slick-center.slider-team.slider
                         +slideTeam(images)
-
-
-
+                    button(type="button").slick-prev
+                        +svg('rectangle')
+                    button(type="button").slick-next
+                        +svg('rectangle')
 
         section.comment
             .container

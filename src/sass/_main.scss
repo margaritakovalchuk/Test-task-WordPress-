@@ -347,8 +347,13 @@ header {
   margin-bottom: 110px;
 }
 
-.slide-inner {
+.slider-team .slide-inner {
   position: relative;
+  opacity: 0.7;
+}
+
+.slider-team .slick-center {
+  opacity: 1;
 }
 
 .img-wrapper, .img-block {
@@ -366,9 +371,9 @@ header {
 }
 
 .img-wrapper .img-block {
-  width: 355px;
-  height: 355px;
-  transform: rotate(-45deg) translateY(-82px) translateX(5px);
+  width: 333px;
+  height: 333px;
+  transform: rotate(-45deg) translateY(-71px) translateX(7px);
 }
 
 .team-member {
@@ -406,6 +411,32 @@ header {
   font-family: 'OpenSans-Regular', sans-serif;
   font-style: italic;
   font-size: 13px;
+}
+
+.slick-center-wrap {
+  position: relative;
+}
+
+.slick-next,
+.slick-prev {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+
+  svg {
+    height: 152px;
+    width: 44px;
+    fill: #424240;
+  }
+}
+
+.slick-next {
+  left: 110%;
+}
+
+.slick-prev {
+  transform: rotate(-180deg);
+  left: -10%;
 }
 
 .comment {
